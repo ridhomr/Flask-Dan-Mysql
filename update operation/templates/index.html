@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>contoh flask-mysql</title>
+</head>
+<body>
+	<h2>contoh flask-mysql</h2>
+	<table border="1">
+		<tr>
+			<td>no</td>
+			<td>nama</td>
+            <td>no telp</td>
+            <td>ubah</td>
+		</tr>
+		{% for baris in container %}
+		<tr>
+			<td>{{ baris[0] }}</td>
+			<td>{{ baris[1] }}</td>
+            <td>{{ baris[2] }}</td>
+            <td><a href="{{ url_for('update', no=baris[0]) }}">Ubah</a></td>
+		</tr>
+		{% endfor %}
+    </table>
+    <p><a href="{{ url_for('insert') }}">Tambah Data</a></p>
+</body>
+</html>
